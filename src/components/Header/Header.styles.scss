@@ -1,0 +1,15 @@
+@import '../../styles//space.scss';
+
+.header {
+  display: flex;
+  margin-left: $medium-space;
+  margin-top: $medium-space;
+  align-items: center;
+  &--icon {
+    height: $large-space;
+    width: $large-space;
+  }
+  &--title {
+    font-weight: bold;
+  }
+}

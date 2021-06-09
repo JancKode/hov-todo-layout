@@ -1,0 +1,25 @@
+@import '../../styles//space.scss';
+@import '../../styles/colors.scss';
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: $medium-space;
+  align-items: center;
+
+  &--description p {
+    color: $gray;
+  }
+
+  &--button {
+    display: flex;
+    background-color: $charcoal;
+    width: 3.5rem;
+    height: 1.8rem;
+    border-radius: 3px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: $small-space;
+  }
+}
