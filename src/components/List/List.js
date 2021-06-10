@@ -1,37 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './List.styles.scss';
 
-const List = () => {
+const List = ({ tasks, index, completeTask, removeTask }) => {
+  useEffect(() => {}, [tasks]);
   return (
     <section className='list'>
-      <div class='round'>
-        <div className='checkbox--wrapper'>
-          <input type='checkbox' id='checkbox' />
-          <label for='checkbox'></label>
-          <p className='text'>Sample 1</p>
-        </div>
-        <span className='delete'>Delete</span>
-      </div>
-
-      <div class='round'>
-        <div className='checkbox--wrapper'>
-          <input defaultChecked={true} type='checkbox' id='checkbox2' />
-          <label for='checkbox2'></label>
-          <strike className='text'>Sample 2</strike>
-        </div>
-        <span className='delete'>Delete</span>
-      </div>
-
-      <div class='round'>
-        <div className='checkbox--wrapper'>
-          <input type='checkbox' id='checkbox3' />
-          <label for='checkbox3'></label>
-          <p className='text'>Sample 3</p>
-        </div>
-
-        <span className='delete'>Delete</span>
-      </div>
+      {tasks.map((task, index) => {
+        return (
+          <div className='round' key={`${task.title}${index}`}>
+            <div className='checkbox--wrapper'>
+              <input
+                onClick={() => completeTask(index)}
+                type='checkbox'
+                id={task.title}
+                defaultChecked={task.completed ? true : false}
+              />
+              <label htmlFor={task.title}></label>
+              {!task.completed ? (
+                <p className='text'>{task.title}</p>
+              ) : (
+                <strike>{task.title}</strike>
+              )}
+            </div>
+            <span className='delete' onClick={() => removeTask(index)}>
+              Delete
+            </span>
+          </div>
+        );
+      })}
     </section>
   );
 };

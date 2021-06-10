@@ -9,6 +9,16 @@
 
   &--description p {
     color: $gray;
+    background-color: $gray;
+  }
+
+  input {
+    background-color: transparent;
+    outline: none !important;
+    border: none;
+    box-shadow: none;
+    padding: 16px;
+    color: $white;
   }
 
   &--button {
