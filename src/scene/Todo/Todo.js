@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header';
 import List from '../../components/List/List';
 
 const Todo = () => {
-  const [tasksRemaining, setTasksRemaining] = useState(0);
   const [tasks, setTasks] = useState([
     {
       title: 'Grab some Pizza',
